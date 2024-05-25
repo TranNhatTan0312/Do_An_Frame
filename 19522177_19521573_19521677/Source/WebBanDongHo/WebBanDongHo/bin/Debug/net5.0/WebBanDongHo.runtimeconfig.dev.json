@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\kakac\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\kakac\\.nuget\\packages"
+    ]
+  }
+}

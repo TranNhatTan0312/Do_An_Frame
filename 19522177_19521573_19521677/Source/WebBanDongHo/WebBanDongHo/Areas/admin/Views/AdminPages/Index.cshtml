@@ -1,0 +1,76 @@
+﻿@using PagedList.Core.Mvc
+@model PagedList.Core.IPagedList<WebBanDongHo.Models.Page>
+
+@{
+    ViewData["Title"] = "Danh sách Page"+ @ViewBag.CurrentPage;
+    Layout = "~/Areas/admin/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<div class="page-header">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-area="admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <span class="breadcrumb-item active">Danh sách Page : page @ViewBag.CurrentPage</span>
+        </nav>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+        <div class="text-right">
+            <a class="btn btn-primary" asp-controller="AdminPages" asp-action="Create">
+                <i class="anticon anticon-plus-circle m-r-5"></i>
+                <span>Tạo mới page</span>
+            </a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Page Name</th>
+                        <th>Trạng thái</th>
+                        <th>#</th>
+                    </tr>
+                </thead>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.PageId</td>
+                            <td>@item.PageName</td>
+                            <td>
+                                @if (item.Published == true)
+                                {
+                                    <div class="d-flex align-items-center">
+                                        <div class="badge badge-success badge-dot m-r-10"></div>
+                                        <div>Public</div>
+                                    </div>
+                                }
+                                else
+                                {
+                            <div class="d-flex align-items-center">
+                                <div class=" badge badge-danger badge-dot m-r-10"></div>
+                 
+                                <div>Non-Public</div>
+                            </div>
+                                }
+                            </td>
+                            <td >
+                                <a class="btn btn-success m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Details" asp-route-id="@item.PageId ">Xem</a>
+                                <a class="btn btn-primary m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Delete" asp-route-id="@item.PageId ">Xoá</a>
+                                <a class="btn btn-secondary m-r-5" asp-area="Admin" asp-controller="AdminPages" asp-action="Edit" asp-route-id="@item.PageId ">Sửa</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+            <div aria-label="Page navigation example">
+                <ul>
+                    <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminPages" asp-action="Index" />
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

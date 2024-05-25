@@ -1,0 +1,32 @@
+﻿@model WebBanDongHo.Models.Role
+
+@{
+    ViewData["Title"] = "Thông tin quyền truy cập";
+    Layout = "~/Areas/admin/Views/Shared/_Admin_Layout.cshtml";
+}
+
+<h1>Chi tiết</h1>
+
+<div class="table-responsive">
+    <table class="product-info-table m-t-20">
+        <tbody>
+            <tr>
+                <td>STT</td>
+                <td class="text-dark font-weight-semibold">@Model.RoleId</td>
+            </tr>
+            <tr>
+                <td>Tên quyền truy cập</td>
+                <td>@Model.RoleName</td>
+            </tr>
+            <tr>
+                <td>Mô tả</td>
+                <td>@Model.Description</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RoleId">Sửa</a> |
+    <a asp-action="Index">Quay lại</a>
+</div>

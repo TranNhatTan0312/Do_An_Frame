@@ -1,0 +1,119 @@
+﻿@model WebBanDongHo.Models.Tindang
+
+@{
+    ViewData["Title"] = "Chỉnh sửa tin đăng";
+    Layout = "~/Areas/admin/Views/Shared/_Admin_Layout.cshtml";
+}
+@section Styles{
+    <link href="~/Admin_assets/summernote/summernote-bs4.css" rel="stylesheet" />
+    <link href="~/Admin_assets/summernote/summernote.css" rel="stylesheet" />
+
+}
+
+<h1>Thêm tin tức</h1>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+        <form asp-controller="AdminTindangs" asp-action="Edit" asp-route-id="@Model.PostId" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PostId" />
+            <input type="hidden" asp-for="Thumb" />
+            <input type="hidden" asp-for="CreatedDate" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="font-weight-semibold" for="productBrand">Ảnh tin tức</label>
+                <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb" />
+                <span asp-validation-for="Thumb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MetaDesc" class="control-label"></label>
+                <input asp-for="MetaDesc" class="form-control" />
+                <span asp-validation-for="MetaDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MetaKey" class="control-label"></label>
+                <input asp-for="MetaKey" class="form-control" />
+                <span asp-validation-for="MetaKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contents" class="control-label"></label>
+                <textarea asp-for="Contents" class="form-control"></textarea>
+                <span asp-validation-for="Contents" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alias" class="control-label"></label>
+                <input asp-for="Alias" class="form-control" />
+                <span asp-validation-for="Alias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Published" /> @Html.DisplayNameFor(model => model.Published)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsHot" /> @Html.DisplayNameFor(model => model.IsHot)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsNewfeed" /> @Html.DisplayNameFor(model => model.IsNewfeed)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script src="~/Admin_assets/vendors/select2/select2.min.js"></script>
+    <script src="~/Admin_assets/js/pages/e-commerce-product-edit.js"></script>
+    <script src="~/Admin_assets/summernote/summernote-bs4.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            $('.summernote').summernote({
+                fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+                styleTags: ['p', 'h1', 'h2', 'h3', 'h4', 'h5'],
+                height: 200,
+                minHeight: null,
+                maxHeight: null,
+                focus: true
+            });
+
+        });
+
+    </script>
+
+
+
+    <!-- page js -->
+    <script src="~/Admin_assets/vendors/select2/select2.min.js"></script>
+    <script src="~/Admin_assets/vendors/quill/quill.min.js"></script>
+    <script src="~/Admin_assets/js/pages/e-commerce-product-edit.js"></script>
+
+
+}
+
+
+
+

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+    <title>@ViewData["Title"]</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/NewFolder/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendors/linericon/style.css" />
+    <link rel="stylesheet" href="~/NewFolder/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/NewFolder/css/themify-icons.css" />
+    <link rel="stylesheet" href="~/NewFolder/css/flaticon.css" />
+    <link rel="stylesheet" href="~/NewFolder/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="~/NewFolder/vendors/lightbox/simpleLightbox.css" />
+    <link rel="stylesheet" href="~/NewFolder/vendors/nice-select/css/nice-select.css" />
+    <link rel="stylesheet" href="~/NewFolder/vendors/animate-css/animate.css" />
+    <link rel="stylesheet" href="~/NewFolder/vendorsjquery-ui/jquery-ui.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="~/NewFolder/css/style.css" />
+    <link rel="stylesheet" href="~/NewFolder/css/responsive.css" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Harmic - Shop List Left Sidebar</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
+    <!-- CSS
+    ============================================ -->
+    <!-- Vendor CSS (Contain Bootstrap, Icon Fonts) -->
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/vendor/Pe-icon-7-stroke.css" />
+
+    <!-- Plugin CSS (Global Plugins Files) -->
+    <link rel="stylesheet" href="~/assets/css/plugins/animate.min.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/jquery-ui.min.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/nice-select.css">
+    <link rel="stylesheet" href="~/assets/css/plugins/magnific-popup.min.css" />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!--================Header Menu Area =================-->
+    @await Html.PartialAsync("_HeaderPartialView.cshtml")
+    <!--================Header Menu Area =================-->
+    @RenderBody()
+    <!--================ start footer Area  =================-->
+    @await Html.PartialAsync("_FooterPartialView.cshtml")
+    <!--================ End footer Area  =================-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="~/NewFolder/js/jquery-3.2.1.min.js"></script>
+    <script src="~/NewFolder/js/popper.js"></script>
+    <script src="~/NewFolder/js/bootstrap.min.js"></script>
+    <script src="~/NewFolder/js/stellar.js"></script>
+    <script src="~/NewFolder/vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="~/NewFolder/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="~/NewFolder/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="~/NewFolder/vendors/isotope/isotope-min.js"></script>
+    <script src="~/NewFolder/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="~/NewFolder/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/NewFolder/vendors/counter-up/jquery.waypoints.min.js"></script>
+    <script src="~/NewFolder/vendors/counter-up/jquery.counterup.js"></script>
+    <script src="~/NewFolder/js/mail-script.js"></script>
+    <script src="~/NewFolder/js/theme.js"></script>
+
+    @await Component.InvokeAsync("Notyf")
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
